@@ -75,6 +75,7 @@ class Blurb
         )
 
         @authorization_token = JSON.parse(response.body)['access_token']
+        p "获取access_token: #{@authorization_token}"
         @token_refreshed_at = current_time
       end
 
@@ -93,7 +94,7 @@ class Blurb
             "Amazon-Advertising-API-ClientId" => @client.client_id
           }
         )
-
+        p "执行到了这里.."
         request.make_request
       end
 
